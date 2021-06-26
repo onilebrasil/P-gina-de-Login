@@ -1,0 +1,122 @@
+:root {
+  --input-error:red;
+  --button-disabled: #acacac
+}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.login {
+  height: 100vh;
+  background: linear-gradient(120deg, rgb(0, 26, 255), rgb(255, 123, 0));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  min-height: 400px;
+  width: 300px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 32px;
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.login-title {
+  margin-bottom: 32px;
+  color: #303030;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-input {
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left:8px;
+    border: unset;
+}
+
+.login-input:focus + .login-input-border::after {
+  width: 100%;
+}
+
+.login-input-border.error {
+  background: (var(--input-error));
+}
+
+.login-input-border.error::after {
+  background: (var(--input-error));
+}
+
+.login-input-border {
+ height: 1px;
+ width: 100%;
+ margin-bottom:16px;
+ background-color: #cfcfcf;
+ transition: .3s ease-in-out;
+}
+
+.login-input-border::after {
+ content: '';
+ display: block;
+ height: 1px;
+ width: 0;
+ margin-bottom: 16px;
+ background: linear-gradient(120deg, rgb(0, 26, 255), rgb(255, 123, 0));
+}
+
+.login-submit {
+  height: 48px;
+  width: 100%;
+  outline:none;
+  background: linear-gradient(120deg,  #ff1c6f, #0be0fc, #ff1c6f );
+  background-size:200px;
+  margin-bottom:32px;
+  color:#303030;
+  font-size: 16px;
+  font-weight:bold;
+  border: unset;
+  border-radius: 4px;
+  cursor:pointer;
+  transition: .5 ease-in-out;
+}
+
+.login-submit:disabled {
+  background: (var(--button-disabled));
+  cursor: not-allowed;
+}
+
+.login-submit:hover {
+  background-position:right;
+}
+
+.login-submit.error {
+  background: var(--input-error);
+}
+
+.login-submit.success {
+  background: green;
+}
+
+.login-reset {
+    font-size: 12px;
+    color: #929292;
+    text-align: center;
+}
